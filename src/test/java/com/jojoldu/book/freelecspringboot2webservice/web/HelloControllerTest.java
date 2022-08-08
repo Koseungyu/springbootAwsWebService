@@ -1,10 +1,11 @@
 package com.jojoldu.book.freelecspringboot2webservice.web;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import lombok.With;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.Matchers.is;
@@ -12,7 +13,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 
-@RunWith(SpringRunner.class)                        //스프링부트와 junit 사이의 연결자 역할(SpringRunner라는 실행자를 사용)
+@ExtendWith(SpringExtension.class)                        //스프링부트와 junit 사이의 연결자 역할(SpringExtension이라는 실행자를 사용)
 @WebMvcTest(controllers = HelloController.class)    //스프링어노테이션 중 WEB(Spring MVC)에만 집중할 수 있는 어노테이션(@Controller, @ControllerAdvice 사용가능)
 public class HelloControllerTest  {
 
